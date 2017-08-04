@@ -1,14 +1,12 @@
 import {timeDriver as timeDriverUntyped} from './time-driver';
 import {mockTimeSource as mockTimeSourceUntyped} from './mock-time-source';
 import {TimeSource, MockTimeSource, Operator} from './time-source';
+import {timeDriver} from './index';
 
 function mockTimeSource (args?: Object): MockTimeSource {
   return mockTimeSourceUntyped(args);
 }
 
-function timeDriver (_, adapter): TimeSource {
-  return timeDriverUntyped(_, adapter);
-}
 
 
 export {
@@ -16,4 +14,7 @@ export {
 
   TimeSource,
   timeDriver,
+
+  MockTimeSource,
+  mockTimeSource
 };
